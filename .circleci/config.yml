@@ -1,4 +1,6 @@
 version: 2
+orbs:
+    jira: jhillhouse92/jira-generate-changelog@dev:0.0.1
 jobs:
   build:
     docker:
@@ -57,3 +59,13 @@ jobs:
               heroku run python manage.py deploy
               heroku restart
             fi
+workflows:
+  build:
+    jobs:
+      - build
+      - jira/jira-generate-changelog:
+          jira_username: ${JIRA_USERNAME}
+          jira_token: ${JIRA_TOKEN}
+          jira_host: ${JIRA_HOST}
+          jira_project: ${JIRA_PROJECT}
+          version: 1.0.0
