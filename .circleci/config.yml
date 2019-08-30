@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 orbs:
     jira: jhillhouse92/jira-generate-changelog@dev:0.0.1
 jobs:
