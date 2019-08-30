@@ -63,6 +63,7 @@ workflows:
   build:
     jobs:
       - build
+      # config file change for rerun failed
       - jira/jira-generate-changelog:
           jira_username: ${JIRA_USERNAME}
           jira_token: ${JIRA_TOKEN}
