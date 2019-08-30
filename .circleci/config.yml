@@ -61,7 +61,7 @@ jobs:
             fi
   publish-github-release:
     docker:
-      - image: cibuilds/github:0.12
+      - image: apihackers/ghr
     steps:
       - attach_workspace:
           at: /tmp/jira-changelog
