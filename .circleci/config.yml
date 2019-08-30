@@ -80,6 +80,6 @@ workflows:
           jira_host: ${JIRA_HOST}
           jira_project: ${JIRA_PROJECT}
           version: 1.0.0
-      - publish-github-release
+      - publish-github-release:
           requires:
             - jira/jira-generate-changelog
